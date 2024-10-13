@@ -1,0 +1,28 @@
+API Test Cases for Appointment System
+
+1. Get Free Slots
+   - Endpoint: GET /freeslots?date=2024-10-21
+   - Expected Response:
+     - Status Code: 200
+     - Body: Should contain a 'slots' property
+
+2. Create Event
+   - Endpoint: POST /events
+   - Request Body:
+     {
+       "title": "Doctor Appointment",
+       "start": "2024-10-21T10:00:00",
+       "end": "2024-10-21T11:00:00"
+     }
+   - Expected Response:
+     - Status Code: 201
+     - Body: Should contain an 'id' for the created event
+
+3. Get Events in Date Range
+   - Endpoint: GET /events
+   - Query Parameters:
+     - startDate: 2024-10-21T00:00:00
+     - endDate: 2024-10-23T23:59:59
+   - Expected Response:
+     - Status Code: 200
+     - Body: Should be an array of events
